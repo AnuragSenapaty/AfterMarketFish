@@ -19,37 +19,36 @@ The ML model I'm going to use is a Feed forward Neural Network.
 
 The only models I’m familiar with are those taught in my Intro to ML class. While it may not be the most advanced, it’s the best option I can think of for this use case. An RNN is really intended for sequence tasks like language modeling, a decision tree would be insanely complicated with hundreds of binary features, and logistic regression or SVMs aren’t designed to capture the complex, nonlinear patterns in chess positions—they’re better suited to simpler classification problems.
 
-'''text
-AfterMarketFish/
-├── README.md
-├── LICENSE
-├── requirements.txt            # Library requirements
-│
-├── data/
-|   └──default
-│       ├── raw/                # Raw PGNs
-│       └── processed/          # Processed model
-│
-├── src/
-│   ├── data/
-│   │   └── loadData.py         # PGN → bitboard tensor pipeline
-│   │   └── dataset.py          # PyTorch Dataset/DataLoader
-│   │
-│   ├── models/
-│   │   └── ffnn.py             # FFNN architecture
-│   │
-│   ├── training/
-│   │   └── train.py            # training loop
-│   │
-│   ├── predict/
-│   │   └── predict.py          # load a model + board state → move
-│
-├── scripts/
-│   ├── run_train.sh            # bash wrapper for train.py
-│   └── run_predict.sh          # bash wrapper for predict.py
-│
-└── tests/
-    ├── test_loader.py
-    ├── test_model.py
-    └── test_training.py
-'''
+
+    AfterMarketFish/
+    ├── README.md
+    ├── LICENSE
+    ├── requirements.txt            # Library requirements
+    │
+    ├── data/
+    |   └──default
+    │       ├── raw/                # Raw PGNs
+    │       └── processed/          # Processed model
+    │
+    ├── src/
+    │   ├── data/
+    │   │   └── loadData.py         # PGN → bitboard tensor pipeline
+    │   │   └── dataset.py          # PyTorch Dataset/DataLoader
+    │   │
+    │   ├── models/
+    │   │   └── ffnn.py             # FFNN architecture
+    │   │
+    │   ├── training/
+    │   │   └── train.py            # training loop
+    │   │
+    │   ├── predict/
+    │   │   └── predict.py          # load a model + board state → move
+    │
+    ├── scripts/
+    │   ├── run_train.sh            # bash wrapper for train.py
+    │   └── run_predict.sh          # bash wrapper for predict.py
+    │
+    └── tests/
+        ├── test_loader.py
+        ├── test_model.py
+        └── test_training.py
