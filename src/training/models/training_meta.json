@@ -1,0 +1,11 @@
+{
+  "npz": "\\\\wsl.localhost\\Ubuntu-24.04\\home\\anurag\\AfterMarketFish\\data\\Magnus\\Processed\\magnus_dataset.npz",
+  "samples_total": 324775,
+  "train_size": 292298,
+  "val_size": 32477,
+  "classes": 1822,
+  "epochs_seen": 10,
+  "batch_size": 512,
+  "lr": 0.0003,
+  "seed": 42
+}
