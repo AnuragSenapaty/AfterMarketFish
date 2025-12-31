@@ -1,12 +1,15 @@
 {
   "npz": "\\\\wsl.localhost\\Ubuntu-24.04\\home\\anurag\\AfterMarketFish\\data\\Magnus\\Processed\\magnus_dataset.npz",
-  "samples_total": 324775,
-  "train_size": 292298,
-  "val_size": 32477,
-  "classes": 1822,
-  "epochs_seen": 10,
+  "out_dir": "\\\\wsl.localhost\\Ubuntu-24.04\\home\\anurag\\AfterMarketFish\\models",
+  "epochs": 10,
   "batch_size": 512,
   "lr": 0.0003,
+  "dropout": 0.2,
+  "hidden1": 1024,
+  "hidden2": 512,
+  "val_split": 0.1,
   "seed": 42,
-  "device": "cpu"
+  "device": "cpu",
+  "best_val_loss": 3.140811629610578,
+  "best_val_acc": 0.23395018012793364
 }

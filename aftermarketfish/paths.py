@@ -15,5 +15,5 @@ def resolve_repo_path(path: str | Path) -> str:
     if p.is_absolute():
         return str(p)
 
-    repo_root = Path(__file__).resolve().parents[2]
+    repo_root = Path(__file__).resolve().parents[1]
     return str((repo_root / p).resolve())
