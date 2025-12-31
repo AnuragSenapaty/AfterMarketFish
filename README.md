@@ -19,36 +19,32 @@ The ML model I'm going to use is a Feed forward Neural Network.
 
 The only models I’m familiar with are those taught in my Intro to ML class. While it may not be the most advanced, it’s the best option I can think of for this use case. An RNN is really intended for sequence tasks like language modeling, a decision tree would be insanely complicated with hundreds of binary features, and logistic regression or SVMs aren’t designed to capture the complex, nonlinear patterns in chess positions—they’re better suited to simpler classification problems.
 
-
     AfterMarketFish/
     ├── README.md
     ├── LICENSE
-    ├── requirements.txt            # Library requirements
-    │
+    ├── requirements.txt
+    
     ├── data/
-    |   └──default
-    │       ├── raw/                # Raw PGNs
-    │       └── processed/          # Processed model
-    │
-    ├── src/
-    │   ├── data/
-    │   │   └── loadData.py         # PGN → bitboard tensor pipeline
-    │   │   └── dataset.py          # PyTorch Dataset/DataLoader
-    │   │
-    │   ├── models/
-    │   │   └── ffnn.py             # FFNN architecture
-    │   │
-    │   ├── training/
-    │   │   └── train.py            # training loop
-    │   │
-    │   ├── predict/
-    │   │   └── predict.py          # load a model + board state → move
-    │
-    ├── scripts/
-    │   ├── run_train.sh            # bash wrapper for train.py
-    │   └── run_predict.sh          # bash wrapper for predict.py
-    │
-    └── tests/
-        ├── test_loader.py
-        ├── test_model.py
-        └── test_training.py
+    │   └── Magnus/
+    │       ├── Raw/                   # Raw PGN files
+    │       └── Processed/             # Generated datasets (NPZ)
+    
+    ├── models/
+    │   ├── ffnn.pt                    # Trained model checkpoint
+    │   ├── vocab.json                 # Move → index vocabulary
+    │   └── training_meta.json         # Training metadata
+    
+    ├── preprocess_magnus.py           # CLI: PGN → NPZ preprocessing
+    ├── train_ffnn.py                  # CLI: train FFNN model
+    ├── predict_move.py                # CLI: predict move from FEN
+    
+    └── aftermarketfish/               # Core library package
+        ├── __init__.py
+        ├── paths.py                   # Repository path resolution
+        ├── bitboards.py               # Board → 12×8×8 bitboard encoding
+        ├── pgn_parser.py              # PGN → (state, move) extraction
+        ├── magnus_preprocess.py       # Magnus Carlsen dataset builder
+        ├── dataset.py                 # PyTorch Dataset for NPZ files
+        ├── model_ffnn.py              # Feed-forward neural network
+        ├── training_loop.py           # Training / evaluation logic
+        └── inference.py               # Model inference utilities
