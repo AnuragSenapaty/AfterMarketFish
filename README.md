@@ -37,7 +37,8 @@ The only models I’m familiar with are those taught in my Intro to ML class. Wh
     ├── preprocess_magnus.py           # CLI: PGN → NPZ preprocessing
     ├── train_ffnn.py                  # CLI: train FFNN model
     ├── predict_move.py                # CLI: predict move from FEN
-    
+    ├── predict_move.py                # CLI: Usses a Bot account to allow me to play it on lichess
+
     └── aftermarketfish/               # Core library package
         ├── __init__.py
         ├── paths.py                   # Repository path resolution
@@ -48,3 +49,4 @@ The only models I’m familiar with are those taught in my Intro to ML class. Wh
         ├── model_ffnn.py              # Feed-forward neural network
         ├── training_loop.py           # Training / evaluation logic
         └── inference.py               # Model inference utilities
+

@@ -1,1 +1,8 @@
 upgrade_acc.py
+.env
+.venv/
+models/
+data/
+*.pt
+*.npz
+__pycache__/
